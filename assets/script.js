@@ -86,6 +86,22 @@ sugarMinusBtn.addEventListener("click", subSugar) //when you clikc the - button 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
+// EXTRA STUFF
+let clearBtn = document.createElement("button");
+clearBtn.innerText = "Clear Chart";
+document.querySelector(".summary").append(clearBtn);
 
+let clearTable = () => {
+    gb = 0;
+    cc = 0;
+    sugar = 0;
+
+    document.querySelector("#qty-gb").innerText = String(gb);
+    document.querySelector("#qty-cc").innerText = String(cc);
+    document.querySelector("#qty-sugar").innerText = String(sugar); //place updated cc value in table next to "chocolate chip"
+    total.innerText = String(gb + cc + sugar); //add total and place it in the table 
+}
+
+clearBtn.addEventListener("click", clearTable);
 
 
