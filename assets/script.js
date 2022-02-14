@@ -86,7 +86,9 @@ sugarMinusBtn.addEventListener("click", subSugar) //when you clikc the - button 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
+// --------------------------------------------------------------------
 // EXTRA STUFF
+// add clear table button
 let clearBtn = document.createElement("button");
 clearBtn.innerText = "Clear Chart";
 document.querySelector(".summary").append(clearBtn);
@@ -104,4 +106,17 @@ let clearTable = () => {
 
 clearBtn.addEventListener("click", clearTable);
 
+// change the background of my name to a random color when it is hovered over
+// standard color = background-color: burlywood;
 
+let randomBackground = () => {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    credit.style.backgroundColor = "#" + randomColor;
+}
+
+let normalBackground = () => {
+    credit.style.backgroundColor = "burlywood";
+}
+
+credit.addEventListener("mouseover", randomBackground);
+credit.addEventListener("mouseout", normalBackground);
